@@ -1,0 +1,34 @@
+f32 score[0]=-4.1850
+f32 score[1]=-4.4359
+f32 score[2]=-9.0201
+f32 score[3]=-5.2571
+f32 next: n=8 argmax=1 mass=1.0000
+i8 score[0]=-4.1888
+i8 score[1]=-4.4328
+i8 score[2]=-9.0050
+i8 score[3]=-5.2561
+i8 next: n=8 argmax=1 mass=1.0000
+exact かな -> 仮名 cost=3000 ids=1/1
+exact かな -> 神奈 cost=5000 ids=2/2
+exact きょう -> 今日 cost=2500 ids=1/2
+exact きょう -> 京 cost=6000 ids=2/1
+prefix わ -> 私
+prefix わ -> 渡し
+decode -> 私の日本語 cost=6800 len=0
+decode -> 渡しの日本語 cost=10260 len=0
+decode -> わたしの日本語 cost=40940 len=0
+connection 1,2=-20 3,3=220
+lm 你 unk=0 score=-1.5000
+lm 好 unk=0 score=-0.4000
+lm 世 unk=0 score=-0.3000
+lm 界 unk=0 score=-0.1000
+lm xyz unk=1 score=-9.2782
+gram 你|好=0.6000 windows=1 matches=1 best=0.6000
+gram 我你好|世界=0.7500
+gram 世|界 rear=5.1800
+gram 好|吗=-6.0000
+session preedit=nihao candidates=你好,拟好,你,泥,拟
+session commit=你好
+session caret=1 text=ni
+session punct=，
+japanese preedit=kyou candidates=今日,京,きょう,キョウ

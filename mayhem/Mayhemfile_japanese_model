@@ -1,0 +1,9 @@
+project: savantenvs/msime-windows
+target: japanese_model
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/japanese_model/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_japanese_model
+    libfuzzer: true
+    timeout: 5
